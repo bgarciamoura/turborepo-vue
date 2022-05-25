@@ -3,8 +3,12 @@ import vue from "@vitejs/plugin-vue";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: process.env.ELECTRON == "true" ? "./" : ".",
   plugins: [vue()],
+  preview: {
+    port: 3005,
+  },
   server: {
-    port: 3002,
+    port: 3005,
   },
 });
